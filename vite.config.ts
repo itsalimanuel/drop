@@ -7,11 +7,11 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/declare/index.ts"),
-      name: "drop",
+      name: "drop-components-ts",
       fileName: (format) => `button.${format}.ts`,
     },
     rollupOptions: {
-      external: ["vue", /^drop/],
+      external: ["vue", /^drop-components-ts/],
       output: {
         globals: {
           vue: "Vue",

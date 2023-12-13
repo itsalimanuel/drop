@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  drop-components-ts:
+    specifier: 0.0.5-beta
+    version: 0.0.5-beta(typescript@5.2.2)
+  namask-vue:
+    specifier: 0.0.10-beta
+    version: 0.0.10-beta(typescript@5.2.2)
   vue:
     specifier: ^3.3.11
     version: 3.3.11(typescript@5.2.2)
@@ -353,6 +359,10 @@ packages:
     dev: true
     optional: true
 
+  /@types/web-bluetooth@0.0.20:
+    resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
+    dev: false
+
   /@vitejs/plugin-vue@4.5.2(vite@5.0.8)(vue@3.3.11):
     resolution: {integrity: sha512-UGR3DlzLi/SaVBPX0cnSyE37vqxU3O6chn8l0HJNzQzDia6/Au2A4xKv+iIJW8w2daf80G7TYHhi1pAUjdZ0bQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -476,6 +486,31 @@ packages:
   /@vue/shared@3.3.11:
     resolution: {integrity: sha512-u2G8ZQ9IhMWTMXaWqZycnK4UthG1fA238CD+DP4Dm4WJi5hdUKKLg0RMRaRpDPNMdkTwIDkp7WtD0Rd9BH9fLw==}
 
+  /@vueuse/core@10.7.0(vue@3.3.11):
+    resolution: {integrity: sha512-4EUDESCHtwu44ZWK3Gc/hZUVhVo/ysvdtwocB5vcauSV4B7NiGY5972WnsojB3vRNdxvAt7kzJWE2h9h7C9d5w==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 10.7.0
+      '@vueuse/shared': 10.7.0(vue@3.3.11)
+      vue-demi: 0.14.6(vue@3.3.11)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/metadata@10.7.0:
+    resolution: {integrity: sha512-GlaH7tKP2iBCZ3bHNZ6b0cl9g0CJK8lttkBNUX156gWvNYhTKEtbweWLm9rxCPIiwzYcr/5xML6T8ZUEt+DkvA==}
+    dev: false
+
+  /@vueuse/shared@10.7.0(vue@3.3.11):
+    resolution: {integrity: sha512-kc00uV6CiaTdc3i1CDC4a3lBxzaBE9AgYNtFN87B5OOscqeWElj/uza8qVDmk7/U8JbqoONLbtqiLJ5LGRuqlw==}
+    dependencies:
+      vue-demi: 0.14.6(vue@3.3.11)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
@@ -496,6 +531,34 @@ packages:
   /de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
     dev: true
+
+  /drop-components-ts@0.0.2-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-laaysc5cWwe2MpIh4Me1wbCudq+rqQL2u9KnZ557hobRa6QTwtQXLSaiX0hAigYq8tnNXL+JP5owRwBhrHhLSA==}
+    dependencies:
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /drop-components-ts@0.0.3-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-YAhLaY7SuhMfYLcfYuZJQfpBBoUFfXyOWEiM8z2V+XqgN+gitFxc9euVnXYJuMF/mFMz3JTHi46A2bWLIHx6MA==}
+    dependencies:
+      drop-components-ts: 0.0.2-beta(typescript@5.2.2)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /drop-components-ts@0.0.5-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-UUloWdmznt858pVDCD+F56oGZkMMPGL1GYiIfBxf8LEmH/KXvutnfymLrUkqhbPGKrdsnv9g9qCxBbpsQ29oVg==}
+    dependencies:
+      drop-components-ts: 0.0.3-beta(typescript@5.2.2)
+      namask-vue: 0.0.10-beta(typescript@5.2.2)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: false
 
   /esbuild@0.19.9:
     resolution: {integrity: sha512-U9CHtKSy+EpPsEBa+/A2gMs/h3ylBC0H0KSqIg7tpztHerLi6nrrcoUJAkNCEPumx8yJ+Byic4BVwHgRbN0TBg==}
@@ -566,6 +629,49 @@ packages:
   /muggle-string@0.3.1:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
     dev: true
+
+  /namask-vue@0.0.1-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-ZoViGoDf9TazXQAZsL6JvWbnqyrP2KsStKA0Xslp1Z4Qww9o1KmfA5j5j3ax5I5g7io/O5O68gw4CjpFJvNIEQ==}
+    dependencies:
+      '@vueuse/core': 10.7.0(vue@3.3.11)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: false
+
+  /namask-vue@0.0.10-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-/SAXx/8Ry8nxd4Ufx3q3qXNnxrZmDJHWdFPUMqRgbWypMsuZBubqUWupBYDWU6bqqrYhwQp8TTw/b3jmo8uqzQ==}
+    dependencies:
+      '@vueuse/core': 10.7.0(vue@3.3.11)
+      namask-vue: 0.0.6-beta(typescript@5.2.2)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: false
+
+  /namask-vue@0.0.3-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-5fh/Hl8zx36p7PxvisyuASYIQc4ByDONwMZZ7drRf9PFhOk4ZijJpcR6bkuNYMNIF/Prk+gnJpJAgxyQkRu36g==}
+    dependencies:
+      '@vueuse/core': 10.7.0(vue@3.3.11)
+      namask-vue: 0.0.1-beta(typescript@5.2.2)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: false
+
+  /namask-vue@0.0.6-beta(typescript@5.2.2):
+    resolution: {integrity: sha512-n3qDH1uVtuhpbnca4Bvop72OhiziW/A4xEI7Xcsb1zm6q7RjSoJz1tLcYHlJUA7tTZqoesXcsxZmeMYMDj+4Iw==}
+    dependencies:
+      '@vueuse/core': 10.7.0(vue@3.3.11)
+      namask-vue: 0.0.3-beta(typescript@5.2.2)
+      vue: 3.3.11(typescript@5.2.2)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - typescript
+    dev: false
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -663,6 +769,21 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /vue-demi@0.14.6(vue@3.3.11):
+    resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.3.11(typescript@5.2.2)
+    dev: false
 
   /vue-template-compiler@2.7.15:
     resolution: {integrity: sha512-yQxjxMptBL7UAog00O8sANud99C6wJF+7kgbcwqkvA38vCGF7HWE66w0ZFnS/kX5gSoJr/PQ4/oS3Ne2pW37Og==}

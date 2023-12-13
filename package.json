@@ -1,16 +1,18 @@
 {
-  "name": "@drop/vue",
-  "version": "0.0.1-beta",
-  "type": "module",
+  "name": "drop-components-ts",
+  "version": "0.0.5-beta",
   "files": [
     "dist"
   ],
-  "main": "./dist/chat.umd.js",
-  "module": "./dist/chat.es.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/button.umd.js",
+  "module": "./dist/button.es.js",
   "exports": {
     ".": {
-      "import": "./dist/chat.es.js",
-      "require": "./dist/chat.umd.js"
+      "import": "./dist/button.es.js",
+      "require": "./dist/button.umd.js"
     }
   },
   "types": "./dist/types/index.d.ts",
@@ -21,6 +23,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "drop-components-ts": "0.0.5-beta",
+    "namask-vue": "0.0.10-beta",
     "vue": "^3.3.11"
   },
   "devDependencies": {

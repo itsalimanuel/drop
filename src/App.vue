@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DropButton from "../dist/button.es";
+import DropButton from "drop-components-ts";
 </script>
 
 <template>

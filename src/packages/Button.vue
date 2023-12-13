@@ -26,7 +26,6 @@ export default defineComponent({
   },
   setup(props) {
     const { size, onClick } = props;
-
     const changeSize = computed(() => {
       return `is-${size}`;
     });
