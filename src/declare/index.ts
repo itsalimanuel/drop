@@ -1,3 +1,3 @@
-import DropButton from "../packages/Button.vue";
-
-export default DropButton;
+import DropButton from "../packages/Button/index";
+import Alert from "../packages/Alert/index";
+export  { DropButton, Alert };

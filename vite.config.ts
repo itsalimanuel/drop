@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -8,7 +9,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/declare/index.ts"),
       name: "drop-components-ts",
-      fileName: (format) => `button.${format}.ts`,
+      fileName: (format) => `drop.${format}.ts`,
     },
     rollupOptions: {
       external: ["vue", /^drop-components-ts/],
@@ -19,4 +20,4 @@ export default defineConfig({
       },
     },
   },
-})
+});
