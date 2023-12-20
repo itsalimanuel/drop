@@ -97,7 +97,6 @@ export default defineComponent({
   <a
     :href="changeHref"
     :class="[disabledClass, changeType, changeUnderline, changeIconDirection]"
-    @click="handleClick"
   >
     <span v-if="icon && typeof icon === 'string'">
       <img :src="icon" alt="icon" class="w-6 h-6" />
