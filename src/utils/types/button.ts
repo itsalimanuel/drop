@@ -17,7 +17,26 @@ type ButtonIcon<T> = {
 };
 type ButtonIconDirection = "left" | "right";
 
-type RoundedProps = "none" | "rounded" | "small" | "medium" | "large" | "full";
+type RoundedProps<T> = {
+  [key in keyof T]: {
+    value: T[key];
+    rounded: "none" | "rounded" | "small" | "medium" | "large" | "full";
+  };
+};
+
+type ButtonType<T> = {
+  [key in keyof T]: {
+    value: T[key];
+    type:
+      | "primary"
+      | "success"
+      | "info"
+      | "warning"
+      | "danger"
+      | "text"
+      | "link";
+  };
+};
 
 //  export types
 export type {
@@ -27,4 +46,5 @@ export type {
   ButtonIcon,
   ButtonIconDirection,
   RoundedProps,
+  ButtonType,
 };

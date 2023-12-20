@@ -30,3 +30,27 @@ export const Rounded = {
     className: "rounded-full",
   },
 };
+
+export const Type = {
+  isPrimary: {
+    className: "bg-blue-500",
+  },
+  isSuccess: {
+    className: "bg-green-500",
+  },
+  isInfo: {
+    className: "bg-blue-400",
+  },
+  isWarning: {
+    className: "bg-yellow-500",
+  },
+  isDanger: {
+    className: "bg-red-500",
+  },
+  isText: {
+    className: "bg-transparent rounded-none border-none",
+  },
+  isLink: {
+    className: "bg-transparent rounded-none border-none underline",
+  },
+};

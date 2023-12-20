@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
-import { Style, Rounded } from "./style";
+import { Style, Rounded, Type } from "./style";
 import {
   ButtonDisabled,
   ButtonSize,
@@ -8,6 +8,7 @@ import {
   ButtonIcon,
   ButtonIconDirection,
   RoundedProps,
+  ButtonType,
 } from "../../utils/type";
 
 export default defineComponent({
@@ -26,7 +27,7 @@ export default defineComponent({
       default: () => {},
     },
     icon: {
-      type: Object as () => ButtonIcon<any>, // Adjust any to the appropriate type
+      type: Object as () => ButtonIcon<string | object>,
       default: null,
     },
     iconDirection: {
@@ -34,12 +35,21 @@ export default defineComponent({
       default: "left",
     },
     rounded: {
-      type: String as () => RoundedProps | undefined,
+      type: String as () => RoundedProps<
+        "none" | "small" | "medium" | "large" | "full"
+      >,
       default: "none",
+    },
+    type: {
+      type: String as () => ButtonType<
+        "primary" | "success" | "info" | "warning" | "danger" | "text" | "link"
+      >,
+      default: "primary",
     },
   },
   setup(props) {
-    const { size, onClick, icon, iconDirection, rounded } = props;
+    const { size, onClick, icon, iconDirection, rounded, type, disabled } =
+      props;
     const changeSize = computed(() => {
       if (size == "small") {
         return Style.isSmallButton.className;
@@ -66,6 +76,25 @@ export default defineComponent({
         return Rounded.isRoundedNone.className;
       }
     });
+    const changeTyp = computed(() => {
+      if (type == "primary") {
+        return Type.isPrimary.className;
+      } else if (type == "success") {
+        return Type.isSuccess.className;
+      } else if (type == "info") {
+        return Type.isInfo.className;
+      } else if (type == "warning") {
+        return Type.isWarning.className;
+      } else if (type == "danger") {
+        return Type.isDanger.className;
+      } else if (type == "text") {
+        return Type.isText.className;
+      } else if (type == "link") {
+        return Type.isLink.className;
+      } else {
+        return Type.isPrimary.className;
+      }
+    });
     const changeIconDirection = computed(() => {
       if (iconDirection == "left") {
         return "flex gap-2 items-center";
@@ -75,8 +104,16 @@ export default defineComponent({
         return "flex gap-2 items-center";
       }
     });
-    const handleClick = (event: MouseEvent) => {
+    const isDisabled = computed(() => {
+      if (disabled) {
+        return "opacity-50 cursor-not-allowed";
+      } else {
+        return "";
+      }
+    });
+    const handleClick = () => {
       if (onClick) {
+        // @ts-ignore
         onClick({ onClick: () => {} });
       }
     };
@@ -88,6 +125,8 @@ export default defineComponent({
       iconDirection,
       changeIconDirection,
       changeRounded,
+      changeTyp,
+      isDisabled,
     };
   },
 });
@@ -97,7 +136,13 @@ export default defineComponent({
   <button
     :disabled="disabled"
     class="text-black hover:bg-opacity-80 hover:text-white"
-    :class="[changeSize, changeIconDirection, changeRounded]"
+    :class="[
+      changeSize,
+      changeIconDirection,
+      changeRounded,
+      changeTyp,
+      isDisabled,
+    ]"
     @click="handleClick"
   >
     <span v-if="icon && typeof icon === 'string'">

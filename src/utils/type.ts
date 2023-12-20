@@ -5,4 +5,5 @@ export type {
   ButtonIcon,
   ButtonIconDirection,
   RoundedProps,
+  ButtonType
 } from "./types/button";
