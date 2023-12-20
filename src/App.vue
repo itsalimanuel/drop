@@ -17,8 +17,9 @@ import icon from "../public/vite.svg";
     Hello Vue
   </DropButton>
   <DropLink
-    to="www.google.com"
+    to="https://google.com"
     type="danger"
+    target="_blank"
     :icon="icon"
     :icon-direction="'right'"
   >

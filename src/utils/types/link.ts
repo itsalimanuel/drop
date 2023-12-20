@@ -28,6 +28,9 @@ type LinkIcon<T> = {
 type LinkIconDirection<T> = {
   [key in keyof T]: { value: T[key]; iconDirection: "left" | "right" };
 };
+type TargetProps<T> = {
+  [key in keyof T]: { value: T[key]; target: "_blank" | "_self" };
+};
 
 export type {
   TypeProps,
@@ -35,4 +38,5 @@ export type {
   UnderlineProps,
   LinkIcon,
   LinkIconDirection,
+  TargetProps
 };

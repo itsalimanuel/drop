@@ -14,4 +14,5 @@ export type {
   UnderlineProps,
   LinkIcon,
   LinkIconDirection,
+  TargetProps,
 } from "./types/link";

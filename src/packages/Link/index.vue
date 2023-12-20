@@ -6,6 +6,7 @@ import {
   UnderlineProps,
   LinkIcon,
   LinkIconDirection,
+  TargetProps,
 } from "../../utils/type";
 import { Type, Underline } from "./style";
 
@@ -38,9 +39,14 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    target: {
+      type: String as () => TargetProps<"_blank" | "_self">,
+      default: "_self",
+    },
   },
   setup(props, { slots }) {
-    const { type, disabled, underline, icon, iconDirection, to } = props;
+    const { type, disabled, underline, icon, iconDirection, to, target } =
+      props;
     const isError = ref(false);
     const disabledClass = computed(() => {
       if (disabled) {
@@ -95,6 +101,7 @@ export default defineComponent({
       changeType,
       changeUnderline,
       isError,
+      target,
       changeIconDirection,
     };
   },
@@ -104,6 +111,7 @@ export default defineComponent({
 <template>
   <a
     :href="changeHref"
+    :target="target"
     :class="[disabledClass, changeType, changeUnderline, changeIconDirection]"
   >
     <span v-if="icon && typeof icon === 'string'">
