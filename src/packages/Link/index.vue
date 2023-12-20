@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed, onMounted, ref } from "vue";
 import {
   TypeProps,
   LinkDisabled,
@@ -39,8 +39,9 @@ export default defineComponent({
       default: "",
     },
   },
-  setup(props) {
+  setup(props, { slots }) {
     const { type, disabled, underline, icon, iconDirection, to } = props;
+    const isError = ref(false);
     const disabledClass = computed(() => {
       if (disabled) {
         return "opacity-50 cursor-not-allowed";
@@ -67,6 +68,12 @@ export default defineComponent({
         return Type.isPrimary.className;
       }
     });
+    onMounted(() => {
+      if (!slots.default || !slots.default().length) {
+        isError.value = true;
+        console.error("DropLink must have a child element");
+      }
+    });
     const changeUnderline = computed(() => {
       if (underline) {
         return Underline.isUnderline.className;
@@ -87,6 +94,7 @@ export default defineComponent({
       disabledClass,
       changeType,
       changeUnderline,
+      isError,
       changeIconDirection,
     };
   },
@@ -107,7 +115,9 @@ export default defineComponent({
       :is="icon"
       class="w-6 h-6"
     />
-
+    <span v-if="isError" class="text-xs">
+      <slot>DropLink must have a child element</slot>
+    </span>
     <slot />
   </a>
 </template>
