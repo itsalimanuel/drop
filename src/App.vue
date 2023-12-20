@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // import { DropButton } from "../dist/drop.es";
-import { DropButton } from "./declare";
+import { DropButton, DropLink } from "./declare";
 import icon from "../public/vite.svg";
 </script>
 
 <template>
-  <DropButton
+  <!-- <DropButton
     size="small"
     :disabled="false"
     :icon="icon"
@@ -15,5 +15,14 @@ import icon from "../public/vite.svg";
     class="no-underline"
   >
     Hello Vue
-  </DropButton>
+  </DropButton> -->
+  <DropLink
+    to="www.google.com"
+    type="danger"
+    :disabled="true"
+    :icon="icon"
+    :icon-direction="'right'"
+  >
+    google
+  </DropLink>
 </template>

@@ -34,7 +34,6 @@ type ButtonType<T> = {
       | "warning"
       | "danger"
       | "text"
-      | "link";
   };
 };
 

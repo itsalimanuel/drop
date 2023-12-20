@@ -5,5 +5,13 @@ export type {
   ButtonIcon,
   ButtonIconDirection,
   RoundedProps,
-  ButtonType
+  ButtonType,
 } from "./types/button";
+
+export type {
+  TypeProps,
+  LinkDisabled,
+  UnderlineProps,
+  LinkIcon,
+  LinkIconDirection,
+} from "./types/link";
