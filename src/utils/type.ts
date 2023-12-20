@@ -1,1 +1,8 @@
-export { ButtonDisabled, ButtonSize, ButtonVoid } from "./types/button";
+export type {
+  ButtonDisabled,
+  ButtonSize,
+  ButtonVoid,
+  ButtonIcon,
+  ButtonIconDirection,
+  RoundedProps,
+} from "./types/button";

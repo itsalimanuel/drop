@@ -17,6 +17,8 @@ type ButtonIcon<T> = {
 };
 type ButtonIconDirection = "left" | "right";
 
+type RoundedProps = "none" | "rounded" | "small" | "medium" | "large" | "full";
+
 //  export types
 export type {
   ButtonDisabled,
@@ -24,4 +26,5 @@ export type {
   ButtonVoid,
   ButtonIcon,
   ButtonIconDirection,
+  RoundedProps,
 };

@@ -1,12 +1,13 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
-import { Style } from "./style";
+import { Style, Rounded } from "./style";
 import {
   ButtonDisabled,
   ButtonSize,
   ButtonVoid,
   ButtonIcon,
   ButtonIconDirection,
+  RoundedProps,
 } from "../../utils/type";
 
 export default defineComponent({
@@ -29,12 +30,16 @@ export default defineComponent({
       default: null,
     },
     iconDirection: {
-      type: String as () => ButtonIconDirection<"left" | "right">,
+      type: String as () => ButtonIconDirection,
       default: "left",
+    },
+    rounded: {
+      type: String as () => RoundedProps | undefined,
+      default: "none",
     },
   },
   setup(props) {
-    const { size, onClick, icon, iconDirection } = props;
+    const { size, onClick, icon, iconDirection, rounded } = props;
     const changeSize = computed(() => {
       if (size == "small") {
         return Style.isSmallButton.className;
@@ -44,6 +49,21 @@ export default defineComponent({
         return Style.isLargeButton.className;
       } else {
         return Style.isMediumButton.className;
+      }
+    });
+    const changeRounded = computed(() => {
+      if (rounded == "none") {
+        return Rounded.isRoundedNone.className;
+      } else if (rounded == "small") {
+        return Rounded.isRoundedSmall.className;
+      } else if (rounded == "medium") {
+        return Rounded.isRoundedMedium.className;
+      } else if (rounded == "large") {
+        return Rounded.isRoundedLarge.className;
+      } else if (rounded == "full") {
+        return Rounded.isRoundedFull.className;
+      } else {
+        return Rounded.isRoundedNone.className;
       }
     });
     const changeIconDirection = computed(() => {
@@ -67,6 +87,7 @@ export default defineComponent({
       icon,
       iconDirection,
       changeIconDirection,
+      changeRounded,
     };
   },
 });
@@ -76,7 +97,7 @@ export default defineComponent({
   <button
     :disabled="disabled"
     class="text-black hover:bg-opacity-80 hover:text-white"
-    :class="[changeSize, changeIconDirection]"
+    :class="[changeSize, changeIconDirection, changeRounded]"
     @click="handleClick"
   >
     <span v-if="icon && typeof icon === 'string'">
