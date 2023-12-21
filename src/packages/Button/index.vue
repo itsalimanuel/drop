@@ -18,6 +18,7 @@ export default defineComponent({
       type: Boolean as () => ButtonDisabled<boolean>,
       default: false,
     },
+
     size: {
       type: String as () => ButtonSize<"small" | "medium" | "large">,
       default: "medium",
@@ -109,6 +110,7 @@ export default defineComponent({
         return "";
       }
     });
+
     const handleClick = () => {
       if (onClick) {
         // @ts-ignore
@@ -133,7 +135,7 @@ export default defineComponent({
 <template>
   <button
     :disabled="disabled"
-    class="text-black hover:bg-opacity-80 hover:text-white"
+    class="text-sm font-semibold leading-[20px] font-sans hover:bg-opacity-90 hover:shadow-sm hover:outline-none"
     :class="[
       changeSize,
       changeIconDirection,
@@ -144,13 +146,13 @@ export default defineComponent({
     @click="handleClick"
   >
     <span v-if="icon && typeof icon === 'string'">
-      <img :src="icon" alt="icon" class="w-6 h-6" />
+      <img :src="icon" alt="icon" class="w-5 h-5" />
     </span>
 
     <component
       v-else-if="icon && typeof icon === 'object'"
       :is="icon"
-      class="w-6 h-6"
+      class="w-5 h-5"
     />
 
     <slot />

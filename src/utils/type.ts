@@ -16,3 +16,7 @@ export type {
   LinkIconDirection,
   TargetProps,
 } from "./types/link";
+
+export type { checkBoxDisabled, checkFull } from "./types/checkbox";
+
+

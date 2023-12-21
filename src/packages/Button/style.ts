@@ -1,18 +1,18 @@
 export const Style = {
   isSmallButton: {
-    className: "bg-teal-400 px-2.5 py-1.5",
+    className: "py-[8px] px-[14px] text-xs",
   },
   isMediumButton: {
-    className: "bg-blue-200 px-4 py-2",
+    className: "py-2.5 px-[16px] text-sm",
   },
   isLargeButton: {
-    className: "bg-blue-400 px-4 py-2",
+    className: "py-[12px] px-[20px] text-base",
   },
 };
 
 export const Rounded = {
   isRoundedNone: {
-    className: "",
+    className: "rounded-none",
   },
   isRounded: {
     className: "rounded",
@@ -33,13 +33,13 @@ export const Rounded = {
 
 export const Type = {
   isPrimary: {
-    className: "bg-blue-500",
+    className: "bg-[#000] text-white",
   },
   isSuccess: {
-    className: "bg-green-500",
+    className: "bg-green-500 ",
   },
   isInfo: {
-    className: "bg-blue-400",
+    className: "bg-gray-500",
   },
   isWarning: {
     className: "bg-yellow-500",
@@ -48,7 +48,7 @@ export const Type = {
     className: "bg-red-500",
   },
   isText: {
-    className: "bg-transparent rounded-none border-none",
+    className: "bg-transparent rounded-none border-none text-black",
   },
   isLink: {
     className: "bg-transparent rounded-none border-none underline",
