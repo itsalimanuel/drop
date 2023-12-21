@@ -47,19 +47,35 @@ export default defineComponent({
       >,
       default: "primary",
     },
+    isIcon: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
-    const { size, onClick, icon, iconDirection, rounded, type, disabled } =
-      props;
+    const {
+      size,
+      onClick,
+      icon,
+      iconDirection,
+      rounded,
+      type,
+      disabled,
+      isIcon,
+    } = props;
     const changeSize = computed(() => {
-      if (size == "small") {
-        return Style.isSmallButton.className;
-      } else if (size == "medium") {
-        return Style.isMediumButton.className;
-      } else if (size == "large") {
-        return Style.isLargeButton.className;
+      if (isIcon) {
+        return "p-2";
       } else {
-        return Style.isMediumButton.className;
+        if (size == "small") {
+          return Style.isSmallButton.className;
+        } else if (size == "medium") {
+          return Style.isMediumButton.className;
+        } else if (size == "large") {
+          return Style.isLargeButton.className;
+        } else {
+          return Style.isMediumButton.className;
+        }
       }
     });
     const changeRounded = computed(() => {
@@ -124,6 +140,7 @@ export default defineComponent({
       icon,
       iconDirection,
       changeIconDirection,
+      isIcon,
       changeRounded,
       changeTyp,
       isDisabled,
@@ -142,6 +159,7 @@ export default defineComponent({
       changeRounded,
       changeTyp,
       isDisabled,
+      isIcon ? 'p-4' : '',
     ]"
     @click="handleClick"
   >

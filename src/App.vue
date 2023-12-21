@@ -18,11 +18,12 @@ const check = () => {};
     <DropButton
       @click="check"
       rounded="medium"
+      :isIcon="true"
       :icon="Icon"
       iconDirection="right"
       size="small"
       :hover="true"
-      >Sign in with Apple</DropButton
+      ></DropButton
     >
   </div>
 </template>
