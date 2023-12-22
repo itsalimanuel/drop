@@ -1,24 +1,34 @@
 <script setup lang="ts">
+import { ref } from "vue";
 // import { DropButton ,DropCheckBox} from "../dist/drop.es";
-import { DropButton } from "./declare";
+import { DropButton, DropAlert } from "./declare";
 
 import Icon from "./components/icon.vue";
 
-const check = () => {};
+const isAc = ref(false);
+const check = () => {
+  isAc.value = !isAc.value;
+  console.log("Hello");
+};
 </script>
 
 <template>
-  <div class=" flex items-center gap-3 p-4">
+  <div class="flex items-center gap-3 p-4">
+    <DropAlert
+      title="Hello"
+      message="Hello Message"
+      placement="bottom-left"
+      :active="isAc"
+    />
     <DropButton
-    type="outline"
+      type="outline"
       @click="check"
       rounded="medium"
-      :isIcon="true"
       :icon="Icon"
       size="small"
       :hover="true"
     >
-    Login wiht Apple
-  </DropButton>
+      active
+    </DropButton>
   </div>
 </template>

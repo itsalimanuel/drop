@@ -17,6 +17,11 @@ export type {
   TargetProps,
 } from "./types/link";
 
+export type {
+  TitleProps,
+  MessageProps,
+  IconProps,
+  AlertPlacement,
+} from "./types/alert";
+
 export type { checkBoxDisabled, checkFull } from "./types/checkbox";
-
-
