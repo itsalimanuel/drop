@@ -43,7 +43,7 @@ export default defineComponent({
     },
     type: {
       type: String as () => ButtonType<
-        "primary" | "success" | "info" | "warning" | "danger" | "text"
+        "primary" | "success" | "info" | "warning" | "danger" | "outline"
       >,
       default: "primary",
     },
@@ -104,8 +104,8 @@ export default defineComponent({
         return Type.isWarning.className;
       } else if (type == "danger") {
         return Type.isDanger.className;
-      } else if (type == "text") {
-        return Type.isText.className;
+      } else if (type == "outline") {
+        return Type.isOutline.className;
       } else {
         return Type.isPrimary.className;
       }

@@ -27,7 +27,7 @@ type RoundedProps<T> = {
 type ButtonType<T> = {
   [key in keyof T]: {
     value: T[key];
-    type: "primary" | "success" | "info" | "warning" | "danger" | "text";
+    type: "primary" | "success" | "info" | "warning" | "danger" | "outline";
   };
 };
 

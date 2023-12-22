@@ -47,8 +47,8 @@ export const Type = {
   isDanger: {
     className: "bg-red-500",
   },
-  isText: {
-    className: "bg-transparent rounded-none border-none text-black",
+  isOutline: {
+    className: "bg-transparent rounded border border-black text-black hover:text-white hover:border-white",
   },
   isLink: {
     className: "bg-transparent rounded-none border-none underline",
