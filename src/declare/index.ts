@@ -3,7 +3,8 @@ import Alert from "../packages/Alert/index";
 import DropLink from "../packages/Link/index";
 import DropCheckBox from "../packages/CheckBox";
 import DropAlert from "../packages/Alert";
-export { DropButton, Alert, DropLink, DropCheckBox, DropAlert };
+import DropInput from "../packages/Input";
+export { DropButton, Alert, DropLink, DropCheckBox, DropAlert, DropInput };
 // src/declare/index.ts
 
 const components: Record<string, any> = {};

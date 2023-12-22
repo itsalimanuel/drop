@@ -24,4 +24,11 @@ export type {
   AlertPlacement,
 } from "./types/alert";
 
+export type {
+  InputTypes,
+  InputSize,
+  InputDisabled,
+  InputPlaceholder,
+} from "./types/input";
+
 export type { checkBoxDisabled, checkFull } from "./types/checkbox";
