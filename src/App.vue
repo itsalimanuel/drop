@@ -1,19 +1,29 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 // import { DropButton ,DropCheckBox} from "../dist/drop.es";
 import { DropButton, DropAlert, DropInput } from "./declare";
 
-import Icon from "./components/icon.vue";
 
-const isAc = ref(false);
+
+const info = reactive({
+  name: "",
+});
 const check = () => {
-  isAc.value = !isAc.value;
-  console.log("Hello");
+  console.log(info);
 };
 </script>
 
 <template>
-  <div class="flex items-center gap-3 p-4">
-    <DropInput type="text" :placeholder="'name'" />
+  <div class="flex items-center gap-3 p-4 w-96">
+    <form action="">
+      <DropInput
+        type="text"
+        error-message="please enter your email from another place"
+        v-model="info.name"
+        placeholder="Enter your email"
+        :required="true"
+      />
+      <DropButton @click="check">check</DropButton>
+    </form>
   </div>
 </template>
