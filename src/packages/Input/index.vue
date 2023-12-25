@@ -147,6 +147,3 @@ export default defineComponent({
     </span>
   </div>
 </template>
-
-<style scoped></style>
-../../utils/validations

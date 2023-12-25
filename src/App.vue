@@ -17,8 +17,7 @@ const check = () => {
   <div class="flex items-center gap-3 p-4 w-96">
     <form action="">
       <DropInput
-        type="text"
-        error-message="please enter your email from another place"
+        type="file"
         v-model="info.name"
         placeholder="Enter your email"
         :required="true"
