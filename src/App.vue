@@ -62,11 +62,12 @@ const check = () => {
 </script>
 
 <template>
-  <div class="flex items-center gap-3 p-4 w-96">
+  <div class="flex flex-col gap-1 p-4 w-[440px]">
     <drop-input
-      type="date"
+      type="email"
       :data="data"
       v-model="info.name"
+      :disabled="true"
       placeholder="Enter your email"
       :required="true"
     />

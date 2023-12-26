@@ -13,6 +13,6 @@ export const Style = {
     set: "w-full my-1",
   },
   isError: {
-    set: "text-left w-full text-xs mb-1 text-red-500 block",
+    set: "text-left w-full text-sm mb-1 text-red-500 block",
   },
 };
