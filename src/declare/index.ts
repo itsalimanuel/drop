@@ -5,6 +5,7 @@ import DropCheckBox from "../packages/CheckBox";
 import DropAlert from "../packages/Alert";
 import DropInput from "../packages/Input";
 import DropSelect from "../packages/Select";
+import DropCard from "../packages/InputCard";
 export {
   DropButton,
   Alert,
@@ -13,6 +14,7 @@ export {
   DropAlert,
   DropInput,
   DropSelect,
+  DropCard,
 };
 // src/declare/index.ts
 
