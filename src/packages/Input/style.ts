@@ -1,8 +1,8 @@
 export const Style = {
   isInput: {
-    box: "text-[#667085] rounded-[8px] border border-[#D0D5DD] bg-white shadow-sm focus:outline-none  focus:border-transparent placeholder-[#667085] placeholder-opacity-50 leading-[24px] font-normal text-black foucs-visible:outline-none",
+    box: "text-[#667085] rounded-[8px]  bg-white shadow-sm focus:outline-none focus:border-transparent placeholder-[#667085] placeholder-opacity-50 leading-[24px] font-normal text-black foucs-visible:outline-none",
   },
-  body: "flex flex-col",
+  body: "flex gap-2 items-center text-[#667085] rounded-[8px] border border-[#D0D5DD] bg-white ",
   isInputSize: {
     small: "text-[12px] leading-[16px] px-[10px] py-[6px]",
     medium: "text-[14px] leading-[24px] px-[12px] py-[8px]",
@@ -13,6 +13,6 @@ export const Style = {
     set: "w-full my-1",
   },
   isError: {
-    set: "text-left w-full text-xs mb-1 text-red-500",
+    set: "text-left w-full text-xs mb-1 text-red-500 block",
   },
 };

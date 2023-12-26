@@ -4,7 +4,16 @@ import DropLink from "../packages/Link/index";
 import DropCheckBox from "../packages/CheckBox";
 import DropAlert from "../packages/Alert";
 import DropInput from "../packages/Input";
-export { DropButton, Alert, DropLink, DropCheckBox, DropAlert, DropInput };
+import DropSelect from "../packages/Select";
+export {
+  DropButton,
+  Alert,
+  DropLink,
+  DropCheckBox,
+  DropAlert,
+  DropInput,
+  DropSelect,
+};
 // src/declare/index.ts
 
 const components: Record<string, any> = {};
