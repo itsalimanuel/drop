@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { InputSize, InputTypes, InputDisabled } from "../../utils/type";
-
+import { Style } from "./style";
 export default defineComponent({
   name: "InputCard",
   props: {
@@ -60,17 +60,25 @@ export default defineComponent({
     const ischange = (event: any) => {
       checkCardType(event);
     };
-    return { isVisa, isMasterCard, ischange, modelValue };
+    const setBody = Style.isBody;
+    const setInput = Style.isInput;
+    const setIcon = Style.isIcon;
+    return {
+      isVisa,
+      isMasterCard,
+      ischange,
+      modelValue,
+      setBody,
+      setInput,
+      setIcon,
+    };
   },
 });
 </script>
 
 <template>
-  <div class="flex items-center gap-2 bg-white pl-2">
-    <div
-      v-if="modelValue"
-      class="w-[34px] h-[24px] border border-gray-400 rounded-sm flex items-center justify-center"
-    >
+  <div :class="setBody">
+    <div v-if="modelValue" :class="setIcon">
       <svg
         v-if="isMasterCard"
         xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +130,7 @@ export default defineComponent({
       @input="ischange"
       placeholder="Card Number"
       v-model="modelValue"
-      class="w-full h-full p-2 bg-transparent focus-visible:outline-none text-black"
+      :class="setInput"
     />
   </div>
 </template>
