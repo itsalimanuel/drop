@@ -6,6 +6,14 @@ import DropAlert from "../packages/Alert";
 import DropInput from "../packages/Input";
 import DropSelect from "../packages/Select";
 import DropCard from "../packages/InputCard";
+import DropLabel from "../packages/Label";
+import {
+  Dropdown,
+  DropdownButton,
+  DropdownGroup,
+  DropdownItem,
+} from "../packages/Dropdown";
+
 export {
   DropButton,
   Alert,
@@ -15,6 +23,11 @@ export {
   DropInput,
   DropSelect,
   DropCard,
+  DropLabel,
+  Dropdown,
+  DropdownButton,
+  DropdownGroup,
+  DropdownItem,
 };
 // src/declare/index.ts
 
